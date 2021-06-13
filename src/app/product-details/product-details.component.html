@@ -1,0 +1,47 @@
+<!-- <div class="card">
+
+  <img [src]='oneproduct.image' class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{oneproduct.title }}</h5>
+    <p class="card-text">{{oneproduct.description }}</p>
+
+  </div>
+</div> -->
+
+<div class="header bg-dark">
+  <div class="container">
+    <p class="header-category">{{oneproduct.category }}</p>
+  </div>
+    
+</div>
+
+
+<div class="product">
+  <div class="container">
+    <div class="bg-light box-shadow-lg rounded-lg px-4 py-3 mb-5">
+      <div class="px-lg-3">
+        <div class="row">
+          <div class="col-6">
+            <img [src]='oneproduct.image' class="card-img-top">
+          </div>
+
+          <div class="col-4">
+            <div class="product-details ml-auto pb-3">
+              <p class="card-text price"> ${{oneproduct.price }}</p>
+              <span class="badge badge-danger badge-shadow align-middle mt-n2">sale</span>
+              <h5 class="card-title">{{oneproduct.title }}</h5>
+              <p class="card-text category">{{oneproduct.category }}</p>
+              <p class="card-text desc">{{oneproduct.description }}</p>
+              <!-- <div class="product-badge product-available mt-n1">product available</div> -->
+           <button class="btn btn-primary btn-shadow btn-block">Add To Cart</button>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

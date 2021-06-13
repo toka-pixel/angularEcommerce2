@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">ECOMMERCE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink='/allproducts'>All Products <span class="sr-only">(current)</span></a>
+        </li>
+
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown"  *ngFor="let item of itemsincart ">
+           <p>{{item.title}]</p>
+           <p>{{item.price]</p>
+           
+            <div class="dropdown-divider"></div>
+           <a routerLink="/cart">Show Cart</a>
+          </div>
+        </li> -->
+
+      </ul>
+
+
+      <!-- <a class=" my-2 my-lg-0 nav-link " routerLink="/cart">cart</a> -->
+
+      <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        <img class="my-2 my-lg-0" src="/assets/user.svg">
+      </a>
+
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="#">edit profile</a>
+        <a class="dropdown-item" href="#">logout</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Something else here</a>
+      </div>
+
+      <div class="img-count" >
+        <label class="count">{{ countNumber() }}</label>
+        <img class="my-2 my-lg-0 " (click)="cart_img()" src="/assets/cart.svg">
+        <div class="content-cart" id="content-cart">
+          <div class="details" aria-labelledby="navbarDropdown">
+            <div class="title-price" *ngFor="let item of items">
+              <p class="title">{{item.title}}</p>
+              <p class="price">${{item.price}} <span class="badge badge-warning">{{item.quantity}}</span></p>
+
+
+            </div>
+
+          </div>
+
+          <p class="total_price"> total price:$ {{ total() }} </p>
+
+
+          <div class="dropdown-divider"></div>
+          <a routerLink="/cart">Show Cart</a>
+        </div>
+      </div>
+
+
+
+
+
+
+
+      <!-- <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+
+    </div>
+  </div>
+</nav>

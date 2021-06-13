@@ -1,0 +1,58 @@
+
+<!--Section: Block Content-->
+
+<!--Section: Block Content-->
+
+
+<div class="header-search">
+  <h2>ecommerce website</h2>
+  <p> Complete your look with,Women Sportswear Sale,Huge Summer Collection</p>
+  <input type="text" id="searchtext" [(ngModel)]="searchtext" placeholder="search......">
+  <!-- <button (click)='search()' >Search</button> -->
+
+</div>
+
+
+<div class="container">
+<div class="row" style="padding-top: 51px;">
+  <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4 justify-content-around "  *ngFor="let data of alldata | filter : searchtext ;let i=index" >
+     
+    <div class="one-product">
+      <div class="content">
+          <img [src]="data. image" alt="Avatar" class="image">
+          <div class="middle">
+              <a class="text" [routerLink]="['/product-details',i]" >Details</a>
+          </div>
+      </div>
+      <div class="name-price">
+          <p class="p1">{{data.category}}</p>
+          <p class="p2"> ${{data.price}}</p>
+      </div>
+
+
+      <div class="" style="padding-left: 32px;">
+        <div class=" position-absolute addToCart" id="" (click)="display(i)">
+        <button class="btn1" (click)='addToCart(data)'>Add To Cart</button>
+        </div>
+        <div class="">
+        <button class="plus" (click)='addToCart(data)'>+</button>
+        <p class="quantity"> {{data.x1}} in cart </p>
+        <button class="minis" (click)='minus(data.id,i)'>-</button>
+        
+        </div>
+               </div>
+    
+    
+    <!-- <img [src]="data. image" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{data.title}}</h5>
+        <p class="card-text">{{data.price}}</p>
+        <a [routerLink]="['/product-details',i]" class="btn btn-primary">more details</a> 
+
+
+        <strong> ? {{ x1 *  data.price  }}</strong>
+     </div> -->
+
+    </div>
+</div>
+</div>

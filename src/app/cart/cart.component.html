@@ -1,0 +1,94 @@
+
+
+<!-- <div class="cart-item" *ngFor="let item of items">
+    <img [src]="item. image" class="card-img-top" alt="...">
+  <span>{{ item.title }}</span>
+  <span>{{ item.price }}</span>
+</div> -->
+
+<div class="header bg-dark">
+  <div class="container">
+    <p class="header-category">Products</p>
+  </div>
+    
+</div>
+
+
+<div class="container pb-5 mb-2 mb-md-4">
+  <div class="row">
+
+    <!-- list of items -->
+    <div class="col-lg-8" style="padding-top: 60px;">
+      <div class="d-sm-flex justify-content-between align-items-center  border-bottom bottom"  *ngFor="let item of items;let i=index">
+        <!-- item -->
+        <div class="media media-ie-fix d-block d-sm-flex align-items-center text-center text-sm-left"
+         >
+          <img [src]="item.image" class="d-inline-block mx-auto mr-sm-4" width="12%">
+         
+          <!-- details -->
+          <div class="media-body pt-2">
+            <h3 class="product-title font-size-base mb-2">{{ item.title }}</h3>
+            <div class="font-size-sm">
+              <span class="text-muted mr-2">category:</span>{{ item.category }}
+            </div>
+            <!-- <div class="font-size-sm">
+              <span class="text-muted mr-2"></span>
+            </div> -->
+            <div class="font-size-lg text-accent pt-2">
+             {{item.price}}
+            </div>
+          </div>
+        </div>
+
+        <!-- right -->
+        <div class="pt-2 pt-sm-0 pl-sm-3 mx-auto mx-sm-0 text-center text-sm-left" style="max-width: 9rem;">
+          <div class="form-group mb-0">
+            <label class="font-weight-medium">Quantity</label>
+            <input type="number" class="form-control">
+          </div>
+
+          <button class="btn btn-link px-0 text-danger" (click)="removeDirect(i,item)">
+          <img src="/assets/close.svg" style='width: 24px;
+          padding-right: 7px;'>
+          <span class="font-size-sm">remove</span>
+        </button>
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+    <!-- form -->
+    <aside class="col-lg-4 pt-4 pt-lg-0">
+      <div class=" rounded-lg  ml-lg-auto" style="
+      padding: 42px 0px;">
+        <div class="header-total">
+          <h2 class="">
+            SubTotal 
+          </h2>
+        <h3><span>$</span>  {{totalprice}}</h3>
+        </div>
+        <div class="border"></div>
+        <form [formGroup]="profileForm" (ngSubmit)="Submitme()" >
+         <div class="mb-3 comments">
+           <span class="badge badge-info font-size-xs mr-2">Notes</span>
+           <span class="font-weight-medium">Additional comments</span>
+         </div>
+         <textarea class="form-control" ></textarea>
+          <input type="text" formControlName="address" class="form-control"  placeholder="User Address">
+          <!-- <label class="invalid-feedback"   *ngIf="!profileForm.address.valid" >invalid address</label> -->
+          <input formControlName="phone" class="form-control" type="text" placeholder="User Phone">
+          <input formControlName="email" class="form-control" type="text" placeholder="User Email">
+          
+          <button class="btn btn-primary btn-shadow btn-block" type="submit">Submit</button>
+        </form>
+      </div>
+
+
+    </aside>
+
+
+  </div>
+</div>
